@@ -1,0 +1,73 @@
+.leftside, .rightside{
+    height:50vh;
+    width:100%;
+}
+
+@media screen and (min-width:768px){
+    .leftside, .rightside{
+        height:100vh;
+    }
+}
+
+.leftside{
+    background:#2d2932;
+    transition:0.5s;
+}
+
+.rightside{
+    background:#2d2932;
+    transition:0.5s;
+
+}
+
+.col-uno, .col-dos{
+    transition: all .25s;
+    width:50%;
+    height:100%;
+    position:fixed;
+    z-index:1;
+    top:0;
+}
+.col-uno{
+    left:0;
+}
+.col-dos{
+    right:0;
+}
+
+.hidden{
+    display:none;
+}
+
+.title{
+    color:white;
+    text-align:center;
+    font-size:60px; 
+    width:100%;
+    
+}
+.back-button-left{
+    right:0%;
+}
+
+.center{
+    transition: all .25s;
+    position:absolute;
+    top:50%;
+    /* transform: translateY(-50%); */
+}
+
+.leftside:hover{
+    background:#3d3844;
+}
+
+.rightside:hover{
+    background:#3d3844;
+}
+
+.upload{
+    left:40%;
+    margin-top:100px;
+    color:white;
+    display:none;
+}
