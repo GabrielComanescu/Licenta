@@ -17,7 +17,12 @@ def get_image():
     shoot()
 
     print(pic)
-    return ('', 204)
+    return ('ok', 204)
+
+@app.route('/download')
+def return_image():
+    return 'ok'
+
 
 if __name__ == '__main__':
     app.run(debug=True)

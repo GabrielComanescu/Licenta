@@ -49,3 +49,7 @@ function back_left(){
     cent[0].style.top ='50%';
 }
 
+function download(){
+    console.log('meh')
+    window.location = '/download'
+}
