@@ -18,10 +18,8 @@
             </div>
 
             <form class='center upload' id='upload' >
-            <!-- <div class='center upload' id='upload' > -->
                 <input type='file' name='img' id='upload_image'/>
                 <input type='submit' value='Upload'>
-            <!-- </div> -->
             </form>
 
             <div class='back-button-left center hidden' id='left-arrow'>
@@ -35,6 +33,12 @@
             <div class='rightside ' onclick='rightFunction()' >
                 <div class='title center'>Dreapta</div> 
             </div>
+
+            <form class='center upload' id='upload2' >
+                <input type='file' name='img' id='upload_image'/>
+                <input type='submit' value='Upload'>
+            </form>
+
             <div class='back-button center hidden' id='right-arrow'>
                 <img src="{{ url_for('static', filename='images/arrow-right.png') }}" width='100' height='100' onclick='back_right()'>
             </div>

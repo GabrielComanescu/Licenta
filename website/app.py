@@ -10,19 +10,22 @@ app = Flask(__name__)
 def main():
     return render_template('index.html')
 
-@app.route('/', methods=['POST'])
+@app.route('/img', methods=['POST'])
 def get_image():
     pic = request.files['img']
-    pic.save('pu.jpg')
-    shoot()
+    if pic:
+        pic.save('pu.jpg')
+        shoot()
 
-    print(pic)
-    return send_file('test\\20_pu.jpg', mimetype='image/jpeg')
+        print(pic)
+        return send_file('test\\20_pu.jpg', mimetype='image/jpeg')
+    else:
+        return 'eroare'
     # return ('ok', 204)
 
-@app.route('/download')
+@app.route('/video')
 def return_image():
-    return send_file('test\\20_pu.jpg', mimetype='image/jpeg')
+    return 'inca nu avem'
 
 
 if __name__ == '__main__':
