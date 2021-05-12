@@ -17,9 +17,11 @@
                 <div class='title center'>Stanga</div>
             </div>
 
-            <form action='http://127.0.0.1:5000' enctype='multipart/form-data' class='center upload' method='POST' id='upload' >
-                <input type='file' name='img'/>
-                <input type='submit' value='upload' onclick="download()">
+            <form class='center upload' id='upload' >
+            <!-- <div class='center upload' id='upload' > -->
+                <input type='file' name='img' id='upload_image'/>
+                <input type='submit' value='Upload'>
+            <!-- </div> -->
             </form>
 
             <div class='back-button-left center hidden' id='left-arrow'>

@@ -17,10 +17,6 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-# get_ipython().run_line_magic('matplotlib', 'inline')
-
-# import warnings
-# warnings.filterwarnings("ignore")
 
 
 # %%
@@ -289,16 +285,16 @@ class Discriminator(nn.Module):
 
 
 # %%
-netG = Generator(2).eval()
-netG.cuda()
-netG.load_state_dict(torch.load('modele/' + 'netG_epoch.pth'))
+# netG = Generator(2).eval()
+# netG.cuda()
+# netG.load_state_dict(torch.load('modele/' + 'netG_epoch.pth'))
 
-netD = Discriminator().eval()
-netD.cuda()
-netD.load_state_dict(torch.load('modele/' + 'netD_epoch.pth'))
+# netD = Discriminator().eval()
+# netD.cuda()
+# netD.load_state_dict(torch.load('modele/' + 'netD_epoch.pth'))
 
-generator_criterion = GeneratorLoss()
-generator_criterion.cuda()
+# generator_criterion = GeneratorLoss()
+# generator_criterion.cuda()
 
 
 # %%
@@ -314,7 +310,6 @@ def shoot():
     from torchvision.transforms import ToTensor, ToPILImage
 
     UPSCALE_FACTOR = 2
-    TEST_MODE = True
     IMAGE_NAME = 'pu.jpg'
     MODEL_NAME = 'netG_epoch.pth'
 
@@ -333,5 +328,6 @@ def shoot():
     out_img.save('test/' + str('20') + '_' + IMAGE_NAME)
 
     print('succes conversie')
+    torch.cuda.empty_cache()
 
 

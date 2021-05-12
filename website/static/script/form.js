@@ -49,7 +49,33 @@ function back_left(){
     cent[0].style.top ='50%';
 }
 
-function download(){
-    console.log('meh')
-    window.location = '/download'
+let up = document.getElementById('upload');
+up.onsubmit = async (e) => {
+    e.preventDefault();
+
+    let response = await fetch('http://127.0.0.1:5000', {
+        method: 'POST',
+        body: new FormData(up)
+    })
+    .then(resp => resp.blob()) 
+    .then(function(data){
+
+        let u = URL.createObjectURL(data);
+        const link = document.createElement('a')
+        link.href = u;
+        link.download = 'upscaled';
+
+
+        link.dispatchEvent(
+            new MouseEvent('click', {
+                bubbles:true,
+                cancelable: true,
+                view: window
+            })
+        );     
+    })
+
+    
 }
+
+

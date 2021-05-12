@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, abort
+from flask import Flask, render_template, request, jsonify, abort, send_file
 import os
 from werkzeug.utils import secure_filename
 import subprocess
@@ -17,11 +17,12 @@ def get_image():
     shoot()
 
     print(pic)
-    return ('ok', 204)
+    return send_file('test\\20_pu.jpg', mimetype='image/jpeg')
+    # return ('ok', 204)
 
 @app.route('/download')
 def return_image():
-    return 'ok'
+    return send_file('test\\20_pu.jpg', mimetype='image/jpeg')
 
 
 if __name__ == '__main__':
