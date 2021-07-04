@@ -106,7 +106,7 @@ up2.onsubmit = async (e) => {
             let u = URL.createObjectURL(data);
             const link = document.createElement('a')
             link.href = u;
-            link.download = 'upscaled';
+            link.download = 'geef';
 
             link.dispatchEvent(
                 new MouseEvent('click', {
